@@ -9,7 +9,7 @@ const endPointUrl = "https://striveschool-api.herokuapp.com/api/comments"
 
 class SingleFilm extends React.Component {
     state = {
-        selected: false,
+        // selected: false,
         review: {
             comment: '',
             rating: 1,
@@ -23,8 +23,9 @@ class SingleFilm extends React.Component {
         // Opens window with comments
     }
 
-    prova = () => {
-
+    printData = (e) => {
+        e.preventDefault();
+        console.log(JSON.stringify(this.state.review));
     }
 
     selectItem = () => {
@@ -68,7 +69,7 @@ class SingleFilm extends React.Component {
                         <Card.Img variant="top" src={this.props.filmName.Poster} onClick={() => this.setState({ selected: !this.state.selected })}
                             style={{ border: this.state.selected ? '3px solid red' : 'none' }} />
                         <Card.Title className="d-none">{this.props.filmName.Title}</Card.Title>
-                        <Form onSubmit={this.postData}>
+                        {/* <Form onSubmit={this.printData}>
                             <Form.Group controlId="filmComment">
                                 <Form.Control type="text" placeholder="Insert a comment" value={this.state.review.comment} onChange={(e) => this.setState({
                                     review: {
@@ -82,7 +83,6 @@ class SingleFilm extends React.Component {
                                         rating: e.target.value
                                     }
                                 })}>
-                                    <option defaultChecked>Select</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -91,7 +91,7 @@ class SingleFilm extends React.Component {
                                 </Form.Select>
                             </Form.Group>
                             <Button type="submit">Submit</Button>
-                        </Form>
+                        </Form> */}
                     </Card>
                 </Col>
             </>

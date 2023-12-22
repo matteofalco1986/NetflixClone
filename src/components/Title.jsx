@@ -8,7 +8,7 @@ class Title extends React.Component {
         return (
             <Container fluid>
                 <div className="d-flex justify-content-between">
-                    <div className="d-flex align-items-center">
+                    <div className="d-flex align-items-center leftTitle">
                         <h2>TV Shows</h2>
                         <Dropdown>
                             <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -21,7 +21,7 @@ class Title extends React.Component {
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
-                    <div className="d-flex align-items-center">
+                    <div className="d-flex align-items-center rightTitle">
                         <p className="mb-0">icon1</p>
                         <p className="mb-0">icon2</p>
                     </div>

@@ -1,3 +1,30 @@
+body {
+  background-color: #211F1F !important;
+  color: #FFFFFF !important;
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: 700 !important;
+}
+
+#dropdown-basic {
+  background: none;
+  border-radius: 0;
+  border-color: white;
+}
+
+h3 {
+  padding-left: 12px;
+}
+
+.leftTitle, .rightTitle {
+  gap: 20px;
+}
+.rightTitle {
+  margin-right: 10px;
+}
+
 .card:hover {
   scale: 1.1;
   z-index: 10;
@@ -13,6 +40,11 @@
   transition-timing-function: ease-in-out;
 }
 
+.card {
+  border: none !important;
+}
+
+
 .d-flex.align-items-center.rightNavbar  {
   display: none !important;
 }
@@ -21,4 +53,18 @@
   .d-flex.align-items-center.rightNavbar{
     display: block !important;
   }
+}
+
+.dropdown-menu {
+  background-color: #211F1F !important;
+  opacity: 0.9;
+  border-radius: 0;
+}
+
+.dropdown-item {
+  color: white !important;
+}
+
+.dropdown-item:hover {
+  background-color: #3e3a3a !important;
 }
