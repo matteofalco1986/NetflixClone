@@ -68,3 +68,8 @@ h3 {
 .dropdown-item:hover {
   background-color: #3e3a3a !important;
 }
+
+svg {
+  width: 30px;
+  height: 20px;
+}
