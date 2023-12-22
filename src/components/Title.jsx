@@ -12,12 +12,12 @@ class Title extends React.Component {
                         <h2>TV Shows</h2>
                         <Dropdown>
                             <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                Dropdown Button
+                                Sagas
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                <Dropdown.Item href="#comedy">Comedy</Dropdown.Item>
-                                <Dropdown.Item href="#drama">Drama</Dropdown.Item>
-                                <Dropdown.Item href="#thriller">Thriller</Dropdown.Item>
+                                <Dropdown.Item href="#comedy">Harry Potter</Dropdown.Item>
+                                <Dropdown.Item href="#drama">Avengers</Dropdown.Item>
+                                <Dropdown.Item href="#thriller">Star Wars</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>

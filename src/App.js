@@ -2,6 +2,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import MyNavbar from './components/MyNavbar';
 import Title from './components/Title';
+import AllFilms from "./components/AllFilms";
+
 
 
 function App() {
@@ -12,7 +14,7 @@ function App() {
       </header>
       <main>
         <Title />
-
+        <AllFilms />
       </main>
       <footer>
 

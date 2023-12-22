@@ -1,0 +1,24 @@
+.card:hover {
+  scale: 1.1;
+  z-index: 10;
+  transition-property: scale;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+.card:not(hover) {
+  scale: 1;
+  z-index: 0;
+  transition-property: scale;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+.d-flex.align-items-center.rightNavbar  {
+  display: none !important;
+}
+
+@media screen and (min-width: 992px){
+  .d-flex.align-items-center.rightNavbar{
+    display: block !important;
+  }
+}

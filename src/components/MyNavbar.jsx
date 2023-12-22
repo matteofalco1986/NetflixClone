@@ -4,13 +4,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Image } from "react-bootstrap";
-import SearchBar from "./AllFilms";
+import SearchBar from "./SearchBar";
 
 class MyNavbar extends React.Component {
     render() {
         return (
             <Navbar expand="lg" className="bg-body-tertiary">
-                <Container fluid className="align-items-center">
+                <Container fluid className="align-items-center leftNavbar">
                     <div className="d-flex">
                         <Navbar.Brand href="#home">
                             <Image src="../logo.png" alt="netflix logo" /> {/* da risolvere */}
@@ -26,7 +26,7 @@ class MyNavbar extends React.Component {
                             </Nav>
                         </Navbar.Collapse>
                     </div>
-                    <div className="d-flex align-items-center">
+                    <div className="d-flex align-items-center rightNavbar">
                         <Nav className="me-auto">
                             <SearchBar />
                             <Nav.Link href="#kids">KIDS</Nav.Link>

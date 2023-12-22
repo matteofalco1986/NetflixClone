@@ -6,6 +6,9 @@ class AllFilms extends React.Component {
     render() {
         return (
             <>
+                <FilmFranchise franchise="Harry Potter" />
+                <FilmFranchise franchise="Avengers" />
+                <FilmFranchise franchise="Star Wars" />
             </>
         )
     }
