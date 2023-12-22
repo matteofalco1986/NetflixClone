@@ -85,7 +85,8 @@ class ModalWindow extends React.Component {
                                             elementId: localStorage.getItem('itemId')
                                         }
                                     });
-                                    console.log(this.state.review);
+                                    // Print to console review value while typing
+                                    // console.log(this.state.review);
                                 }}></Form.Control>
                                 <Form.Select type="select" placeholder="Insert a comment" value={this.state.review.rate} onChange={(e) => {
                                     this.setState({
