@@ -12,7 +12,7 @@ class SingleFilm extends React.Component {
         // selected: false,
         review: {
             comment: '',
-            rating: 1,
+            rate: 1,
             elementId: this.props.filmName.imdbID
         }
 
@@ -52,7 +52,7 @@ class SingleFilm extends React.Component {
             alert('Comment sent');
             this.setState({
                 comment: '',
-                rating: 1,
+                rate: 1,
                 elementId: this.props.filmName.imdbID
             })
 
@@ -69,7 +69,7 @@ class SingleFilm extends React.Component {
                         <Card.Img variant="top" src={this.props.filmName.Poster} onClick={() => this.setState({ selected: !this.state.selected })}
                             style={{ border: this.state.selected ? '3px solid red' : 'none' }} />
                         <Card.Title className="d-none">{this.props.filmName.Title}</Card.Title>
-                        {/* <Form onSubmit={this.printData}>
+                      <Form onSubmit={this.postData}>
                             <Form.Group controlId="filmComment">
                                 <Form.Control type="text" placeholder="Insert a comment" value={this.state.review.comment} onChange={(e) => this.setState({
                                     review: {
@@ -77,10 +77,10 @@ class SingleFilm extends React.Component {
                                         comment: e.target.value
                                     }
                                 })}></Form.Control>
-                                <Form.Select type="select" placeholder="Insert a comment" value={this.state.review.rating} onChange={(e) => this.setState({
+                                <Form.Select type="select" placeholder="Insert a comment" value={this.state.review.rate} onChange={(e) => this.setState({
                                     review: {
                                         ...this.state.review,
-                                        rating: e.target.value
+                                        rate: e.target.value
                                     }
                                 })}>
                                     <option>1</option>
@@ -91,7 +91,7 @@ class SingleFilm extends React.Component {
                                 </Form.Select>
                             </Form.Group>
                             <Button type="submit">Submit</Button>
-                        </Form> */}
+                        </Form>
                     </Card>
                 </Col>
             </>
