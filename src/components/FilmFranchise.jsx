@@ -29,7 +29,7 @@ class FilmFranchise extends React.Component {
             .then((data) => {
                 // console.log('Data received:', data);
                 this.setState({ films: data.Search });
-                console.log(this.state.films)
+                // console.log(this.state.films)
             })
             .catch((error) => {
                 console.error('Fetch error:', error);
@@ -38,7 +38,7 @@ class FilmFranchise extends React.Component {
 
     render() {
         console.log('render')
-        console.log(this.state.films.filter((item, index) => index < 6))
+        // console.log(this.state.films.filter((item, index) => index < 6))
 
         return (
             <>

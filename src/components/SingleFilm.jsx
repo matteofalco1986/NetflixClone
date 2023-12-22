@@ -2,6 +2,7 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
+
 const apiKey = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg0Mzg0NGI1MjViYjAwMThlZDA3ZDUiLCJpYXQiOjE3MDMxNzE1OTgsImV4cCI6MTcwNDM4MTE5OH0.19JGKqZEjq_wmFal7XJVWRdL6nCr4XKaXSvbqKCpzB0"
 const endPointUrl = "https://striveschool-api.herokuapp.com/api/comments"
 
@@ -9,18 +10,54 @@ const endPointUrl = "https://striveschool-api.herokuapp.com/api/comments"
 
 class SingleFilm extends React.Component {
     state = {
-        // selected: false,
+        selected: false,
+        comments: [],
         review: {
             comment: '',
             rate: 1,
             elementId: this.props.filmName.imdbID
         }
+    }
+
+    displayComments = () => {
+        const modalWindow = document.querySelector(".modalWindow");
+        const commentsWindow = document.getElementById('commentsWindow');
+        const backdrop = document.querySelector(".backdrop");
+        setTimeout(() => {
+            modalWindow.classList.toggle('showModal');
+            backdrop.classList.toggle('showModal');
+            for (let i = 0; i < this.state.comments.length; i++) {
+                commentsWindow.innerHTML += `
+                                        <div class="d-flex justify-content-between singleComment">
+                                            <p>${this.state.comments[i].comment}</p>
+                                            <p>${this.state.comments[i].rate}</p>
+                                        </div>
+                                    `
+            }
+        }, 250)
 
     }
 
+    getComments = async (_id) => {
+        try {
+            const response = await fetch(`${endPointUrl}/${_id}`, {
+                headers: {
+                    Authorization: apiKey,
+                },
+            });
 
-    displayComments = () => {
-        // Opens window with comments
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            this.setState({
+                comments: data
+            })
+            // console.log(this.state.comments);
+        } catch (error) {
+            console.error('Error:', error);
+        }
     }
 
     printData = (e) => {
@@ -28,70 +65,24 @@ class SingleFilm extends React.Component {
         console.log(JSON.stringify(this.state.review));
     }
 
-    selectItem = () => {
+    populateModal = () => {
 
-    }
-
-    postData = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await fetch(endPointUrl, {
-                method: "POST",
-                body: JSON.stringify(this.state.review),
-                headers: {
-                    "Content-Type": 'application/json',
-                    Authorization: apiKey,
-                }
-            });
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status ${response.status}`);
-            }
-            const data = await response.json();
-            console.log(data);
-            alert('Comment sent');
-            this.setState({
-                comment: '',
-                rate: 1,
-                elementId: this.props.filmName.imdbID
-            })
-
-        } catch (error) {
-            console.log("Error: ", error);
-        }
     }
 
     render() {
         return (
             <>
                 <Col xs={12} sm={6} md={4} lg={2} key={this.props.filmName.imdbID}>
-                    <Card>
-                        <Card.Img variant="top" src={this.props.filmName.Poster} onClick={() => this.setState({ selected: !this.state.selected })}
-                            style={{ border: this.state.selected ? '3px solid red' : 'none' }} />
+                    <Card id={this.props.filmName.imdbID} onClick={() => {
+                        localStorage.setItem('itemId', this.state.review.elementId)
+                        this.setState({ selected: true });
+                        this.getComments(this.state.review.elementId);
+                        this.getComments(this.state.review.elementId);
+                        this.displayComments();
+                    }}
+                        style={{ border: this.state.selected ? '3px solid red' : 'none' }}>
+                        <Card.Img variant="top" src={this.props.filmName.Poster} />
                         <Card.Title className="d-none">{this.props.filmName.Title}</Card.Title>
-                      <Form onSubmit={this.postData}>
-                            <Form.Group controlId="filmComment">
-                                <Form.Control type="text" placeholder="Insert a comment" value={this.state.review.comment} onChange={(e) => this.setState({
-                                    review: {
-                                        ...this.state.review,
-                                        comment: e.target.value
-                                    }
-                                })}></Form.Control>
-                                <Form.Select type="select" placeholder="Insert a comment" value={this.state.review.rate} onChange={(e) => this.setState({
-                                    review: {
-                                        ...this.state.review,
-                                        rate: e.target.value
-                                    }
-                                })}>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </Form.Select>
-                            </Form.Group>
-                            <Button type="submit">Submit</Button>
-                        </Form>
                     </Card>
                 </Col>
             </>
