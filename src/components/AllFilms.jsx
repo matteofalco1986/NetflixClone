@@ -8,9 +8,11 @@ class AllFilms extends React.Component {
         return (
             <>
                 <ModalWindow />
-                <div className="searchFilms"></div>
+                <div className="searchFilms">
+                    <FilmFranchise franchise={this.props.searchText} />
+                </div>
                 <div className="allFilms">
-                    <FilmFranchise franchise="Harry Potter" />
+                    <FilmFranchise franchise="Lord of the rings" />
                     <FilmFranchise franchise="Avengers" />
                     <FilmFranchise franchise="Star Wars" />
                 </div>

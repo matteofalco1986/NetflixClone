@@ -31,7 +31,7 @@ class MyNavbar extends React.Component {
                     </div>
                     <div className="d-flex align-items-center rightNavbar">
                         <Nav className="me-auto rightMenu">
-                            <SearchBar />
+                            {/* <SearchBar /> */}
                             <Nav.Link href="#kids">KIDS</Nav.Link>
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">

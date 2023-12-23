@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import MyNavbar from './components/MyNavbar';
 import Title from './components/Title';
 import AllFilms from "./components/AllFilms";
-
+import SearchBar from './components/SearchBar';
 
 
 function App() {
@@ -13,8 +13,7 @@ function App() {
         <MyNavbar />
       </header>
       <main>
-        <Title />
-        <AllFilms />
+        <SearchBar />
       </main>
       <footer>
 

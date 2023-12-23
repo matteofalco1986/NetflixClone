@@ -2,6 +2,8 @@ import React from "react";
 import Form from 'react-bootstrap/Form'
 import { Button } from 'react-bootstrap'
 import FilmFranchise from "./AllFilms";
+import Title from "./Title";
+import AllFilms from "./AllFilms";
 
 
 const apiKey = "248f77ce";
@@ -9,7 +11,7 @@ const url = "http://www.omdbapi.com/";
 
 class SearchBar extends React.Component {
     state = {
-        searchQuery: '',
+        searchQuery: 'Harry Potter',
         Movies: []
     }
 
@@ -37,10 +39,13 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-            <>
-                <Form onSubmit={(e) => {
+            <div>
+                <Form  className="searchBar" onSubmit={(e) => {
                     e.preventDefault();
                     this.getData();
+                    this.setState({
+                        searchQuery: this.state.searchQuery
+                    })
                     console.log('form submitted');
                     setTimeout(() => console.log(this.state.Movies), 3000);
                 }}
@@ -59,8 +64,9 @@ class SearchBar extends React.Component {
                         Submit
                     </Button>
                 </Form>
-                {/* <FilmFranchise franchise={this.state.searchQuery} /> */}
-            </>
+                <Title />
+                <AllFilms searchText={this.state.searchQuery} />
+            </div>
         )
     }
 }
