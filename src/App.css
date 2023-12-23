@@ -19,6 +19,8 @@ body {
 
 h3 {
   padding-left: 12px;
+  font-size: 1.5rem !important;
+  margin-top: 20px !important;
 }
 
 .leftTitle {
@@ -141,3 +143,6 @@ select {
   gap: 7px;
 }
 
+#logo {
+  width: 100px;
+}

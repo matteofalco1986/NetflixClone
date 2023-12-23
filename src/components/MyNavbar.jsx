@@ -5,6 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Image } from "react-bootstrap";
 import SearchBar from "./SearchBar";
+import logo from "../logo.png"
 
 
 
@@ -15,7 +16,7 @@ class MyNavbar extends React.Component {
                 <Container fluid className="align-items-center leftNavbar">
                     <div className="d-flex">
                         <Navbar.Brand href="#home">
-                            <Image src="../logo.png" alt="netflix logo" /> {/* da risolvere */}
+                            <Image src={logo} id ="logo" alt="netflix logo" /> {/* da risolvere */}
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
