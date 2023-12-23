@@ -12,7 +12,7 @@ class AllFilms extends React.Component {
                     <FilmFranchise franchise={this.props.searchText} />
                 </div>
                 <div className="allFilms">
-                    <FilmFranchise franchise="Lord of the rings" />
+                    <FilmFranchise franchise="Star trek" />
                     <FilmFranchise franchise="Avengers" />
                     <FilmFranchise franchise="Star Wars" />
                 </div>
