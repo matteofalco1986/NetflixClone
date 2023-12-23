@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { Button, Container, Row, Col } from 'react-bootstrap';
-import Form from 'react-bootstrap/Form';
+import { Col } from 'react-bootstrap';
 
 const apiKey = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg0Mzg0NGI1MjViYjAwMThlZDA3ZDUiLCJpYXQiOjE3MDMxNzE1OTgsImV4cCI6MTcwNDM4MTE5OH0.19JGKqZEjq_wmFal7XJVWRdL6nCr4XKaXSvbqKCpzB0"
 const endPointUrl = "https://striveschool-api.herokuapp.com/api/comments"

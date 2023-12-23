@@ -135,3 +135,9 @@ select {
   color: white;
   border: 1px solid white;
 }
+
+.rightMenu {
+  align-items: center;
+  gap: 7px;
+}
+

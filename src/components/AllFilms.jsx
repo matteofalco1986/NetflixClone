@@ -8,9 +8,12 @@ class AllFilms extends React.Component {
         return (
             <>
                 <ModalWindow />
-                <FilmFranchise franchise="Harry Potter" />
-                <FilmFranchise franchise="Avengers" />
-                <FilmFranchise franchise="Star Wars" />
+                <div className="searchFilms"></div>
+                <div className="allFilms">
+                    <FilmFranchise franchise="Harry Potter" />
+                    <FilmFranchise franchise="Avengers" />
+                    <FilmFranchise franchise="Star Wars" />
+                </div>
             </>
         )
     }

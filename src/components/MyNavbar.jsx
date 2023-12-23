@@ -29,7 +29,7 @@ class MyNavbar extends React.Component {
                         </Navbar.Collapse>
                     </div>
                     <div className="d-flex align-items-center rightNavbar">
-                        <Nav className="me-auto">
+                        <Nav className="me-auto rightMenu">
                             <SearchBar />
                             <Nav.Link href="#kids">KIDS</Nav.Link>
                             <div>

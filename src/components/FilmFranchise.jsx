@@ -1,5 +1,4 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
 import { Container, Row, Col } from 'react-bootstrap';
 import SingleFilm from "./SingleFilm";
 
@@ -18,7 +17,7 @@ class FilmFranchise extends React.Component {
     }
 
     componentDidMount = () => {
-        console.log('component did mount');
+        console.log('component FilmFranchise did mount');
         fetch('http://www.omdbapi.com/' + `?s=${this.props.franchise}` + `&apiKey=${apiKey}`)
             .then((response) => {
                 if (!response.ok) {
