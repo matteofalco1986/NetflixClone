@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from 'react-bootstrap';
 import SingleFilm from "./SingleFilm";
 
-const apiKey = "248f77ce";
+const apiKey = "e52feb2";
 const url = "http://www.omdbapi.com/";
 
 class FilmFranchise extends React.Component {
