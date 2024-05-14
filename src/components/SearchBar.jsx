@@ -6,7 +6,7 @@ import Title from "./Title";
 import AllFilms from "./AllFilms";
 
 
-const apiKey = "248f77ce";
+const apiKey = "e52feb2";
 const url = "http://www.omdbapi.com/";
 
 class SearchBar extends React.Component {
